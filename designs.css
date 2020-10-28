@@ -1,0 +1,285 @@
+/* =============================================
+Base styles used by All Screens DO NOT EDIT BELOW
+============================================= */
+ 
+ 
+article, aside, figcaption, figure,
+footer, header, main, nav, section { 
+    display: block;
+}
+ 
+address, article, aside, blockquote, body, cite, 
+div, dl, dt, dd, em, figcaption, figure, footer, 
+h1, h2, h3, h4, h5, h6, header, html, img, 
+li, main, nav, nav a, ol, p, section, span, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+ 
+body {
+    line-height: 1.2em;
+}
+ 
+ul, ol {
+    list-style: none;
+}
+ 
+nav ul {
+    list-style: none;
+    list-style-image: none;
+}
+ 
+nav a {
+    text-decoration: none;
+}
+ 
+/* =============================================
+Base styles used by All Screens DO NOT EDIT ABOVE
+============================================= */
+ 
+/* HTML and Body Styles */
+:root{
+    --Html-background: rgb(246, 177, 177);
+    --Shadow: rgb(51, 51, 51);
+    --Nav-active: rgb(220, 27, 27);
+    --Spotlight: rgb(171, 171, 171);
+    --text-background: rgb(211, 211, 211);
+    --text-color: rgb(111, 111, 111);
+}
+
+
+
+html{
+    background-color: var(--Html-background);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+body{
+    background-color: white;
+    width: 1024px;
+    margin-right: 10%;
+    margin-left: 15%;
+    box-shadow: 10px 10px 25px, -10px 10px 25px black;;
+    
+}
+
+body header{
+    background-color: white;
+    width: 100%;
+}
+
+#logoImage{
+    display: block;
+    width: 100%;
+    width: 600px;
+    margin-left: 20%;
+}
+
+p{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin: 15px;
+}
+
+nav ul li, .top{
+    margin: 10px;
+}
+
+nav ul a, .top{
+    color: white;
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+nav ul a:hover, .top{
+    color: var(--Nav-active);
+    text-shadow: 0px 0px 2px black, 0px 0px 15px white;
+}
+
+p img{
+    float: right;
+    width: 45%;
+    margin: 0px;
+    margin-bottom: 120px;
+    margin-left: 50px;
+    box-shadow: black 10px -10px 30pc;
+    transform: rotate(30deg);
+}
+
+.spotlight{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    text-shadow: white -2px 0px 1px, white -5px 0px 30px;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    text-align: end;
+}
+
+section, .spotlight{
+    background-color: var(--Spotlight);
+    padding-bottom: 15px;
+    overflow: hidden;
+}
+
+img, .spotlight{
+    float: left;
+    width: 35%;
+    display: block;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+p, .spotlight{
+    margin-bottom: 0px;
+}
+
+aside{
+    background-color: var(--text-background);
+}
+
+aside a{
+    color: var(--Nav-active);
+}
+
+aside h1{
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.4rem;
+    text-align: center;
+    margin-top:20px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+}
+
+aside img{
+    display: block;
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+}
+
+dl{
+    text-align: center;
+}
+
+footer{
+    width: 100%;
+}
+
+dl dt{
+    margin-bottom: 20px;
+}
+
+nav, .bottom{
+    background-color: var(--Nav-active);
+    color: var(--text-color);
+    padding:15px;
+    display: flex;
+    /* Make the items in it a flexbox row  */
+    /* Make sure the items can not wrap.  */
+    justify-content: center;
+}
+
+nav ul li, .bottom{
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+nav ul a, .bottom{
+    color: white;
+}
+
+footer p{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: black;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left:10px;
+}
+
+nav li, .bottom{
+    margin: 0px;
+    /* Using flex values only
+    Make sure the item can shrink freely 
+    Make sure the item CANNOT grow
+    Make the item have a max width of 150px */
+}
+
+/* Create a media rule for any screen with 480px or smaller everything under this will be in that media rule */
+
+@media(max-width: 480px) {
+
+    body{
+        background-color: var(--Shadow);
+        color: var(--text-background);
+    }
+
+    aside{
+        display: none;
+    }
+
+    article img{
+        display: none;
+    }
+
+    section, .spotlight{
+        display: none;
+    }
+
+    nav ul, .top{
+        display: flexbox;
+        /* Make is the items can wrap 
+        Make it position in a row */
+    }
+
+    nav ul li, .top{
+        font-size: 2.2rem;
+        /* Using flex values only 
+    Make the default size 130px 
+    Make it so it can grow and shrink with a value of */
+    }
+
+    nav ul li a, .top{
+        padding: 0%;
+        padding-top: 50%;
+        padding-bottom: 50%;
+    }
+
+    nav.top ul li:nth-of-type(1){
+        background-image: images/cw_images01.png;
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
+
+        
+    }
+
+    /* Paragraph with the ID links
+    Display as a flexbox 
+    No wrapping
+    Make it a row
+    Place the extra space around them */
+
+}
