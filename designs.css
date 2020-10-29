@@ -67,8 +67,7 @@ body{
     width: 1024px;
     margin-right: 10%;
     margin-left: 15%;
-    box-shadow: 10px 10px 25px, -10px 10px 25px black;;
-    
+    box-shadow: var(--Shadow) 10px 10px 25px, var(--Shadow) -10px 10px 25px ;
 }
 
 body header{
@@ -114,11 +113,17 @@ p img{
     margin: 0px;
     margin-bottom: 120px;
     margin-left: 50px;
-    box-shadow: black 10px -10px 30pc;
+    box-shadow: var(--Shadow) 10px -10px 30pc;
     transform: rotate(30deg);
 }
 
-.spotlight{
+section, .spotlight{
+    background-color: var(--Spotlight);
+    padding-bottom: 15px;
+    overflow: hidden;
+}
+
+section h1, .spotlight{
     font-size: 2.5rem;
     color: var(--text-color);
     text-shadow: white -2px 0px 1px, white -5px 0px 30px;
@@ -129,13 +134,7 @@ p img{
     text-align: end;
 }
 
-section, .spotlight{
-    background-color: var(--Spotlight);
-    padding-bottom: 15px;
-    overflow: hidden;
-}
-
-img, .spotlight{
+section img, .spotlight{
     float: left;
     width: 35%;
     display: block;
@@ -145,7 +144,7 @@ img, .spotlight{
     margin-left: 15px;
 }
 
-p, .spotlight{
+section p, .spotlight{
     margin-bottom: 0px;
 }
 
@@ -219,12 +218,10 @@ footer p{
     padding-left:10px;
 }
 
-nav li, .bottom{
-    margin: 0px;
-    /* Using flex values only
-    Make sure the item can shrink freely 
-    Make sure the item CANNOT grow
-    Make the item have a max width of 150px */
+nav ul, .bottom{
+    max-width: 150px;
+    flex-shrink: 1;
+    flex-grow: 0;
 }
 
 /* Create a media rule for any screen with 480px or smaller everything under this will be in that media rule */
@@ -250,36 +247,114 @@ nav li, .bottom{
 
     nav ul, .top{
         display: flexbox;
-        /* Make is the items can wrap 
-        Make it position in a row */
+        flex-wrap: wrap;
+        grid-row: 0 / 1;
     }
 
     nav ul li, .top{
         font-size: 2.2rem;
-        /* Using flex values only 
-    Make the default size 130px 
-    Make it so it can grow and shrink with a value of */
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 130px;
     }
 
     nav ul li a, .top{
-        padding: 0%;
+        padding-right: 0%;
+        padding-left: 0%;
         padding-top: 50%;
         padding-bottom: 50%;
     }
 
     nav.top ul li:nth-of-type(1){
-        background-image: images/cw_images01.png;
+        background-image: url("media/cw_images01.png");
         /* Make sure the background is centered
         Make sure the background doesn’t repeat 
         Make sure the size fits the container it is in */
-
-        
+    }
+    nav.top ul li:nth-of-type(1){
+        background-image: url("media/cw_images02.png");
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
+    }
+    nav.top ul li:nth-of-type(1){
+        background-image: url("media/cw_images03.png");
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
+    }
+    nav.top ul li:nth-of-type(1){
+        background-image: url("media/cw_images04.png");
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
+    }
+    nav.top ul li:nth-of-type(1){
+        background-image: url("media/cw_images05.png");
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
+    }
+    nav.top ul li:nth-of-type(1){
+        background-image: url("media/cw_images06.png");
+        /* Make sure the background is centered
+        Make sure the background doesn’t repeat 
+        Make sure the size fits the container it is in */
     }
 
-    /* Paragraph with the ID links
-    Display as a flexbox 
-    No wrapping
-    Make it a row
-    Place the extra space around them */
+    p, #links{
+        display: flexbox;
+        grid-row: 2 /3;
+        /* No wrapping */
+        /* Extra space */
+    } 
+    
+    p a, #links{
+        background-color: var(--Nav-active);
+        color: white;
+        text-decoration-style: none;
+        padding: 10px;
+        /*Create curved corners of 20px */
+    }
 
+}
+
+@media(max-width: 480px) {
+    body{
+        display: flexbox;
+        /* With wrapping
+        In a row orientation */
+    }
+
+    article{
+        flex-basis: 400px;
+        flex-grow: 2;
+        flex-shrink: 1;
+    }
+
+    aside{
+        flex-basis: 200px;
+        flex-grow: 1;
+        flex-shrink: 2;
+    }
+
+    nav ul, .top{
+        display: flexbox;
+        /* With wrapping 
+        In a row orientation
+        Center the items vertically
+        Center the items horizontally */
+        background-color: var(--Shadow);
+        height: 50px;
+    }
+
+    nav ul li, .top{
+        flex-basis: 80px;
+        flex-grow: 0;
+        flex-shrink: 1;
+    }
+
+    p, #link{
+        display: none;
+    }
 }
