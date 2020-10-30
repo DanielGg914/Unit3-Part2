@@ -75,7 +75,7 @@ body header{
     width: 100%;
 }
 
-#logoImage{
+img#logoImage{
     display: block;
     width: 100%;
     width: 600px;
@@ -88,11 +88,11 @@ p{
     margin: 15px;
 }
 
-nav ul li, .top{
+nav ul li.top{
     margin: 10px;
 }
 
-nav ul a, .top{
+nav ul a.top{
     color: white;
     display: block;
     font-size: 1.2rem;
@@ -117,7 +117,7 @@ p img{
     transform: rotate(30deg);
 }
 
-section, .spotlight{
+section.spotlight{
     background-color: var(--Spotlight);
     padding-bottom: 15px;
     overflow: hidden;
@@ -168,11 +168,11 @@ aside h1{
 }
 
 aside img{
-    display: block;
+    display: inline-block;
     width: 30%;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 10%;
+    margin-left: 0%;
 }
 
 dl{
@@ -193,7 +193,7 @@ nav, .bottom{
     padding:15px;
     display: flex;
     /* Make the items in it a flexbox row  */
-    /* Make sure the items can not wrap.  */
+    white-space: nowrap;
     justify-content: center;
 }
 
@@ -241,24 +241,24 @@ nav ul, .bottom{
         display: none;
     }
 
-    section, .spotlight{
+    section.spotlight{
         display: none;
     }
 
-    nav ul, .top{
+    nav ul.top{
         display: flexbox;
         flex-wrap: wrap;
         grid-row: 0 / 1;
     }
 
-    nav ul li, .top{
+    nav ul li.top{
         font-size: 2.2rem;
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 130px;
     }
 
-    nav ul li a, .top{
+    nav ul li a.top{
         padding-right: 0%;
         padding-left: 0%;
         padding-top: 50%;
@@ -302,14 +302,14 @@ nav ul, .bottom{
         Make sure the size fits the container it is in */
     }
 
-    p, #links{
+    p#links{
         display: flexbox;
         grid-row: 2 /3;
         /* No wrapping */
         /* Extra space */
     } 
     
-    p a, #links{
+    p a#links{
         background-color: var(--Nav-active);
         color: white;
         text-decoration-style: none;
@@ -319,11 +319,10 @@ nav ul, .bottom{
 
 }
 
-@media(max-width: 480px) {
+@media(min-width: 481px) {
     body{
         display: flexbox;
-        /* With wrapping
-        In a row orientation */
+        word-wrap: break-word;
     }
 
     article{
@@ -338,23 +337,20 @@ nav ul, .bottom{
         flex-shrink: 2;
     }
 
-    nav ul, .top{
+    nav ul.top{
         display: flexbox;
-        /* With wrapping 
-        In a row orientation
-        Center the items vertically
-        Center the items horizontally */
+        word-wrap: break-word;
         background-color: var(--Shadow);
         height: 50px;
     }
 
-    nav ul li, .top{
+    nav ul li.top{
         flex-basis: 80px;
         flex-grow: 0;
         flex-shrink: 1;
     }
 
-    p, #link{
+    p#links{
         display: none;
     }
 }
